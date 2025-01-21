@@ -1,0 +1,56 @@
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.title {
+  font-size: 2rem;
+  color: white;
+}
+.length-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.labels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.number-elements {
+  display: flex;
+  gap: 5px;
+}
+.session-time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer-control-container {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+}
+
+.reset {
+  color: red;
+  font-size: 1.2rem;
+}

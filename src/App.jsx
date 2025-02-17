@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import "./App.css";
 import { useEffect } from "react";
-import { FaArrowDown, FaArrowUp, FaPause, FaPlay } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { HiMiniPlayPause } from "react-icons/hi2";
 import { VscDebugRestart } from "react-icons/vsc";
 
 function App() {
@@ -138,54 +138,79 @@ function App() {
   };
 
   return (
-    <div className="main-container">
-      <div className="app-container">
-        <div className="title">25 + 5 Clock</div>
-
-        <div className="length-container">
-          <div className="labels-container">
-            <div id="break-label">Break Length</div>
-            <div className="number-elements">
-              <button onClick={handleBreakDecrement} id="break-decrement">
-                <FaArrowDown />
+    <div className=" flex h-screen justify-center items-center bg-[#1c1c1c] font-montserrat">
+      <div className="flex w-2xl h-96 flex-col items-center bg-[#242424]">
+        <div className="flex items-center p-2 border-b-2 border-[#202020] h-14 bg-[#242424] w-full">
+          <div className="text-xl font-bold text-[#31b95b]">25 + 5 Clock</div>
+        </div>
+        <div className="flex justify-between w-full p-3">
+          <div className="flex flex-col items-center justify-center w-2xs h-20 bg-[#303030] rounded-md shadow">
+            <div className="text-[#efefef] font-semibold">Break Length</div>
+            <div className="flex gap-5">
+              <button
+                className="text-xl cursor-pointer"
+                onClick={handleBreakDecrement}
+              >
+                <FaArrowDown className="text-[#6c6c6c] hover:text-[#31b95b]" />
               </button>
-              <div id="break-length">{Math.floor(blength / 60)}</div>
-              <button onClick={handleBreakIncrement} id="break-increment">
-                <FaArrowUp />
+              <div className="text-[#32acdb] font-medium">
+                {Math.floor(blength / 60)}
+              </div>
+              <button
+                className="text-xl cursor-pointer"
+                onClick={handleBreakIncrement}
+              >
+                <FaArrowUp className="text-[#6c6c6c] hover:text-[#31b95b]" />
               </button>
             </div>
           </div>
-          <div className="labels-container">
-            <div id="session-label">Session Length</div>
-            <div className="number-elements">
-              <button onClick={handleSessionDecrement} id="session-decrement">
-                <FaArrowDown />
+          <div className="flex flex-col items-center justify-center w-2xs h-20 bg-[#303030] rounded-md shadow">
+            <div className="text-[#efefef] font-semibold">Session Length</div>
+            <div className="flex gap-5">
+              <button
+                className="text-xl cursor-pointer"
+                onClick={handleSessionDecrement}
+              >
+                <FaArrowDown className="text-[#6c6c6c] hover:text-[#31b95b]" />
               </button>
-              <div id="session-length">{Math.floor(slength / 60)}</div>
-              <button onClick={handleSessionIncrement} id="session-increment">
-                <FaArrowUp />
+              <div className="text-[#32acdb] font-medium">
+                {Math.floor(slength / 60)}
+              </div>
+              <button
+                className="text-xl cursor-pointer"
+                onClick={handleSessionIncrement}
+              >
+                <FaArrowUp className="text-[#6c6c6c] hover:text-[#31b95b]" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="session-time-container">
-          <div id="timer-label">{breakRunning ? "Break" : "Session"}</div>
-          <div id="time-left">{format(time)}</div>
+        <div className="flex flex-col items-center h-full w-xl rounded-md shadow justify-center text-4xl my-2 bg-[#303030]">
+          <div className="text-[#efefef] font-bold ">
+            {breakRunning ? "Break" : "Session"}
+          </div>
+          <div
+            className={`text-[#6c6c6c] font-semibold ${
+              running && "text-[#32acdb]"
+            }`}
+          >
+            {format(time)}
+          </div>
         </div>
 
-        <div className="timer-control-container">
+        <div className="flex w-2xs justify-center gap-2.5 h-full p-3">
           <button
+            className="cursor-pointer flex gap-1 items-center"
             onClick={() => {
               if (running) clearInterval(timer.current);
               setRunning(!running);
             }}
-            id="start_stop"
           >
-            <FaPlay /> <FaPause />
+            <HiMiniPlayPause className="text-6xl text-[#6c6c6c] hover:text-[#31b95b] bg-[#303030] rounded-md shadow w-20 h-14" />
           </button>
-          <button className="reset" onClick={handleReset} id="reset">
-            <VscDebugRestart />
+          <button className="text-5xl cursor-pointer" onClick={handleReset}>
+            <VscDebugRestart className="text-[#6c6c6c] hover:text-[#b93131] bg-[#303030] rounded-md shadow w-20 h-14" />
           </button>
         </div>
         <audio

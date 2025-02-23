@@ -19,7 +19,7 @@ export const Timer = () => {
 
   return (
     <div
-      className={`flex flex-col items-center h-full w-xl rounded-md shadow justify-center text-4xl my-2 ${color.componentBackground}`}
+      className={`flex flex-col items-center h-full lg:w-xl md:w-md sm:w-xs w-64 rounded-md shadow justify-center text-4xl my-2 ${color.componentBackground}`}
     >
       <div className={`${color.mainText} font-bold`}>
         {breakRunning ? "Break" : "Session"}

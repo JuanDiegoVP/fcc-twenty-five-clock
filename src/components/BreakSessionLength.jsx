@@ -16,11 +16,11 @@ export const BreakSessionLength = () => {
   const { blength, slength } = useSelector((state) => state.timer);
 
   return (
-    <div className="flex justify-between w-full p-3">
+    <div className="flex items-center lg:justify-between justify-center w-full p-3">
       <div
-        className={`flex flex-col items-center justify-center w-2xs h-20 ${color.componentBackground} rounded-md shadow`}
+        className={`flex flex-col items-center justify-center lg:w-2xs  sm:w-60 w-40 sm:h-20 h-14 mr-4 ${color.componentBackground} rounded-md shadow`}
       >
-        <div className={`${color.mainText} font-semibold`}>Break Length</div>
+        <div className={`${color.mainText} font-semibold max-[350px]:text-[12px] max-[640px]:text-[14px]`}>Break Length</div>
         <div className="flex gap-5">
           <button
             className="text-xl cursor-pointer"
@@ -40,9 +40,9 @@ export const BreakSessionLength = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col items-center justify-center w-2xs h-20 ${color.componentBackground} rounded-md shadow`}
+        className={`flex flex-col items-center justify-center lg:w-2xs sm:w-60 w-40 sm:h-20 h-14 ml-4 ${color.componentBackground} rounded-md shadow`}
       >
-        <div className={`${color.mainText} font-semibold`}>Session Length</div>
+        <div className={`${color.mainText} font-semibold max-[350px]:text-[12px] max-[640px]:text-[14px]`}>Session Length</div>
         <div className="flex gap-5">
           <button
             className="text-xl cursor-pointer"

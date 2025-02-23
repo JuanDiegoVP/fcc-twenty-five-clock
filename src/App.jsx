@@ -36,14 +36,12 @@ function App() {
     return () => clearInterval(timer.current);
   });
 
-  //Add mobile responsiveness
-
   return (
     <div
       className={`flex h-screen justify-center items-center transition-colors ${color.pageBackground} font-montserrat`}
     >
       <div
-        className={`flex w-2xl h-96 flex-col items-center ${color.containerBackground}`}
+        className={`flex lg:w-2xl md:w-xl sm:w-md w-xs max-[350px]:w-2xs h-96 flex-col items-center ${color.containerBackground}`}
       >
         <Navbar />
         <BreakSessionLength />
